@@ -20,6 +20,7 @@
 @stop
 
 @inject('tags', 'App\Tag');
+@inject('pages', 'App\Page');
 
 @section('content')
     <div class="page-content edit-add container-fluid">
@@ -93,9 +94,10 @@
                             @endforeach
                             <div class="form-group  col-md-12 ">
                                 <label class="control-label" for="name">Tag</label>
-                                <select class="form-control select2 select2-hidden-accessible" name="tag_id" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                @php $page_tags = (array) $pages::find($dataTypeContent->id)->tags()->get()->pluck('id')->toArray(); @endphp
+                                <select class="form-control select" name="tag[]" multiple tabindex="0" aria-hidden="false">
                                     @foreach ($tags->all() as $tag)
-                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                        <option value="{{ $tag->id }}" {{ in_array($tag->id, $page_tags) ? 'selected' : 'null' }}>{{ $tag->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
