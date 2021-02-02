@@ -3,46 +3,34 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use TCG\Voyager\Traits\Translatable;
 
 class Page extends Model
 {
-    protected $fillable = ['author_id', 'title', 'excerpt', 'body', 'slug', 'meta_description', 'meta_keywords', 'status'];
+    use Translatable;
     
-    public $timestamps = true;
+    protected $translatable = ['title', 'slug', 'body'];
     
-    public function getRules($request)
+    const STATUS_ACTIVE = 'ACTIVE';
+    const STATUS_INACTIVE = 'INACTIVE';
+    
+    public static $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
+
+    protected $guarded = [];
+
+    public function save(array $options = [])
     {
-        $rules = [
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required',
-            'slug' => 'required|unique:pages,slug,' . $request->id,
-            'meta_description' => 'required',
-            'meta_keywords' => 'required',
-            'status' => 'in:ACTIVE,INACTIVE',
-        ];
+        if (!$this->author_id && \Auth::user()) {
+            $this->author_id = \Auth::user()->getKey();
+        }
         
-        if ($request->hasfile('image')) $rules['image'] = 'required|image|mimes:jpeg,png,jpg|max:2048';
-        
-        return $rules;
+        return parent::save();
     }
     
-    public function getData($request)
+    public function scopeActive($query)
     {
-        $data = [
-            'author_id' => \Auth::user()->id,
-            'title' => $request->title,
-            'excerpt' => $request->excerpt,
-            'body' => $request->body,
-            'slug' => $request->slug,
-            'meta_description' => $request->meta_description,
-            'meta_keywords' => $request->meta_keywords,
-            'status' => $request->status
-        ];
-        
-        if ($request->hasfile('image')) $data['image'] = $request->image;
-        
-        return $data;
+        return $query->where('status', static::STATUS_ACTIVE);
     }
     
     public function tags()

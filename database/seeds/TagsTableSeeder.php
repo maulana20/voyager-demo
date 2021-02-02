@@ -31,6 +31,7 @@ class TagsTableSeeder extends Seeder
         
         // for ovveride model controller pada BREAD
         $this->updatePage();
+        $this->updatePost();
     }
     
     public function addDataType()
@@ -155,7 +156,15 @@ class TagsTableSeeder extends Seeder
     {
         $table = Voyager::model('DataType')->whereName('pages')->first();
         $table->model_name = 'App\Page';
-        $table->controller = '\App\Http\Controllers\VoyagerPagesController';
+        $table->controller = '\App\Http\Controllers\Voyager\BaseController';
+        $table->save();
+    }
+    
+    public function updatePost()
+    {
+        $table = Voyager::model('DataType')->whereName('posts')->first();
+        $table->model_name = 'App\Post';
+        $table->controller = '\App\Http\Controllers\Voyager\BaseController';
         $table->save();
     }
     
