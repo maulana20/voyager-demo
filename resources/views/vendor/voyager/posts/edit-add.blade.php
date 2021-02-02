@@ -61,7 +61,17 @@
         <i class="{{ $dataType->icon }}"></i>
         {{ __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @if (isset($isModelTranslatable) && $isModelTranslatable)
+        <div class="language-selector">
+            <div class="btn-group btn-group-sm" role="group" data-toggle="buttons">
+                @foreach(config('voyager.multilingual.locales') as $lang)
+                    <label class="btn btn-primary{{ ($lang === config('voyager.multilingual.default')) ? " active" : "" }}" onclick="selectedLang('{{ $lang }}')">
+                        <input type="radio" name="i18n_selector" id="{{$lang}}" autocomplete="off"{{ ($lang === config('voyager.multilingual.default')) ? ' checked="checked"' : '' }}> {{ strtoupper($lang) }}
+                    </label>
+                @endforeach
+            </div>
+        </div>
+    @endif
 @stop
 
 @inject('tags', 'App\Tag');
@@ -188,8 +198,9 @@
                             <div class="form-group  col-md-12 ">
                                 <label class="control-label" for="name">Tag</label>
                                 @php $post_tags = []; if ($edit) $post_tags = (array) $posts::find($dataTypeContent->id)->tags()->get()->pluck('id')->toArray(); @endphp
-                                <select class="form-control select" name="tag[]" multiple tabindex="0" aria-hidden="false">
-                                    @foreach ($tags->all() as $tag)
+                                <select class="form-control select" name="tag[]" id="tags" multiple tabindex="0" aria-hidden="false">
+                                    @foreach ($tags::withTranslations()->get() as $tag)
+                                        @php $tag = $tag->translate('id'); @endphp
                                         <option value="{{ $tag->id }}" {{ in_array($tag->id, $post_tags) ? 'selected' : 'null' }}>{{ $tag->name }}</option>
                                     @endforeach
                                 </select>
@@ -406,5 +417,30 @@
             });
             $('[data-toggle="tooltip"]').tooltip();
         });
+        function selectedLang(lang)
+        {
+            $.ajax({
+                url: "{{ url('/translate/tags') }}" + "/" + lang,
+                method: 'GET',
+                data: '',
+                success: function (result) {
+                    result.forEach(function (data, index) {
+                        var options = document.getElementById('tags').options;
+                        if (options[index].value == data.id) options[index].text = data.name
+                    })
+                }
+            });
+            $.ajax({
+                url: "{{ url('/translate/categories') }}" + "/" + lang,
+                method: 'GET',
+                data: '',
+                success: function (result) {
+                    result.forEach(function (data, index) {
+                        var options = document.getElementsByName('category_id')[0].options;
+                        if (options[index].value == data.id) options[index].text = data.name
+                    })
+                }
+            });
+        }
     </script>
 @stop

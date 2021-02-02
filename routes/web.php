@@ -24,4 +24,5 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'translate'], function () {
     Route::get('tags/{lang}', 'TranslateController@tags')->name('translate.tags');
+    Route::get('categories/{lang}', 'TranslateController@categories')->name('translate.categories');
 });
