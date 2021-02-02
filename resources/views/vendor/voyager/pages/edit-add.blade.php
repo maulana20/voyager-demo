@@ -94,8 +94,7 @@
                             @endforeach
                             <div class="form-group  col-md-12 ">
                                 <label class="control-label" for="name">Tag</label>
-                                @php $page_tags = []; @endphp
-                                @if ($edit) $page_tags = (array) $pages::find($dataTypeContent->id)->tags()->get()->pluck('id')->toArray(); @endif
+                                @php $page_tags = []; if ($edit) $page_tags = (array) $pages::find($dataTypeContent->id)->tags()->get()->pluck('id')->toArray(); @endphp
                                 <select class="form-control select" name="tag[]" multiple tabindex="0" aria-hidden="false">
                                     @foreach ($tags->all() as $tag)
                                         <option value="{{ $tag->id }}" {{ in_array($tag->id, $page_tags) ? 'selected' : 'null' }}>{{ $tag->name }}</option>
