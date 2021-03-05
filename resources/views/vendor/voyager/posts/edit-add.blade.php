@@ -198,10 +198,9 @@
                             <div class="form-group  col-md-12 ">
                                 <label class="control-label" for="name">Tag</label>
                                 @php $post_tags = []; if ($edit) $post_tags = (array) $posts::find($dataTypeContent->id)->tags()->get()->pluck('id')->toArray(); @endphp
-                                <select class="form-control select" name="tag[]" id="tags" multiple tabindex="0" aria-hidden="false">
-                                    @foreach ($tags::withTranslations()->get() as $tag)
-                                        @php $tag = $tag->translate('id'); @endphp
-                                        <option value="{{ $tag->id }}" {{ in_array($tag->id, $post_tags) ? 'selected' : 'null' }}>{{ $tag->name }}</option>
+                                <select class="form-control select" name="tags[]" id="tags" multiple tabindex="0" aria-hidden="false">
+                                    @foreach ($tags::get() as $tag)
+                                        <option value="{{ $tag->name }}" {{ in_array($tag->id, $post_tags) ? 'selected' : 'null' }}>{{ $tag->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -440,6 +439,12 @@
                         if (options[index].value == data.id) options[index].text = data.name
                     })
                 }
+            });
+        }
+        window.onload = function() {
+            $('#tags').select2({
+                tags: true,
+                tokenSeparators: [',', ' ']
             });
         }
     </script>

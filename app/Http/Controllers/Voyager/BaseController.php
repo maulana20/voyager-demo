@@ -15,6 +15,7 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
+use App\Tag;
 
 class BaseController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
@@ -31,7 +32,7 @@ class BaseController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows)->validate();
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
         
-        if (!empty($request->tag)) $data->tags()->sync((array) $request->tag);
+        Tag::saveData($data, $request->tags);
         
         event(new BreadDataAdded($dataType, $data));
         
@@ -74,7 +75,7 @@ class BaseController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->editRows, $dataType->name, $id)->validate();
         $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
         
-        if (!empty($request->tag)) $data->tags()->sync((array) $request->tag);
+        Tag::saveData($data, $request->tags);
         
         event(new BreadDataUpdated($dataType, $data));
         

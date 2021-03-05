@@ -19,5 +19,5 @@ A step by step how to get a development env running
 
 ### User Credential
 
-username : admin@admin.com
-password : password
+`username : admin@admin.com`
+`password : password`

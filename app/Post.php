@@ -20,6 +20,8 @@ class Post extends Model
     
     protected $guarded = [];
     
+    protected $appends = ['full_image'];
+    
     public function save(array $options = [])
     {
         if (!$this->author_id && \Auth::user()) {
@@ -47,6 +49,11 @@ class Post extends Model
     public function tags()
     {
         return $this->morphToMany('App\Tag', 'taggable');
+    }
+    
+    public function getFullImageAttribute()
+    {
+        return url('storage/' . $this->image);
     }
 }
 

@@ -12,6 +12,8 @@ class Page extends Model
     
     protected $translatable = ['title', 'slug', 'body'];
     
+    protected $appends = ['full_image', 'tags_name'];
+    
     const STATUS_ACTIVE = 'ACTIVE';
     const STATUS_INACTIVE = 'INACTIVE';
     
@@ -36,5 +38,19 @@ class Page extends Model
     public function tags()
     {
         return $this->morphToMany('App\Tag', 'taggable');
+    }
+    
+    public function getFullImageAttribute()
+    {
+        return url('storage/' . $this->image);
+    }
+    
+    public function getTagsNameAttribute()
+    {
+        if (empty($this->tags)) return null;
+        
+        $tags = array_map(function($tag) { return $tag['name']; }, $this->tags()->get()->toArray());
+        
+        return implode(',', $tags);
     }
 }
