@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:none}.cls-3,.cls-4{stroke:none}.cls-4{fill:#b1c0ce}
+        </style>
+    </defs>
+    <g id="Group_16" transform="translate(-1187 -242)">
+        <g id="edit-24px" transform="translate(1189.282 244.282)">
+            <g id="Group_10">
+                <path id="Rectangle_565" d="M0 0H20V20H0z" class="cls-1" transform="translate(-.282 -.282)"/>
+            </g>
+            <g id="Group_14" transform="translate(2.43 2.427)">
+                <g id="Group_13">
+                    <g id="Group_11" transform="translate(0 2.585)">
+                        <g id="Path_364" class="cls-2">
+                            <path d="M3 15.317v2.462a.4.4 0 0 0 .4.4h2.467a.38.38 0 0 0 .283-.121l8.843-8.835-3.036-3.033-8.836 8.835a.4.4 0 0 0-.121.292z" class="cls-3" transform="translate(-3 -6.19)"/>
+                            <path d="M5.867 18.184c.105 0 .21-.04.283-.122l8.844-8.835-3.037-3.037-8.836 8.835c-.08.081-.121.178-.121.292v2.462c0 .226.178.405.405.405h2.462m0 2H3.405C2.079 20.184 1 19.104 1 17.779v-2.462c0-.644.251-1.25.707-1.706l8.836-8.835 1.414-1.414 1.414 1.414 3.037 3.037 1.415 1.415-1.416 1.414-8.823 8.814c-.445.464-1.066.728-1.717.728z" class="cls-4" transform="translate(-3 -6.19)"/>
+                        </g>
+                    </g>
+                    <g id="Group_12" transform="translate(9.823)">
+                        <g id="Path_365" class="cls-2">
+                            <path d="M19.649 5.129l-1.9-1.9a.806.806 0 0 0-1.142 0L15.13 4.716l3.037 3.037 1.482-1.482a.806.806 0 0 0 0-1.142z" class="cls-3" transform="translate(-15.13 -2.997)"/>
+                            <path d="M17.183 2.997c-.207 0-.413.08-.571.237L15.13 4.716l3.037 3.037 1.482-1.482c.316-.316.316-.826 0-1.142l-1.895-1.895c-.158-.158-.365-.237-.571-.237m0-2c.75 0 1.455.293 1.985.823l1.895 1.895c.53.53.823 1.236.823 1.985 0 .75-.292 1.455-.823 1.985l-1.482 1.482-1.414 1.415-1.414-1.415-3.037-3.036-1.414-1.415 1.414-1.414 1.482-1.482c.53-.53 1.235-.823 1.985-.823z" class="cls-4" transform="translate(-15.13 -2.997)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <path id="Rectangle_566" d="M0 0H24V24H0z" class="cls-1" transform="translate(1187 242)"/>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}
+        </style>
+    </defs>
+    <g id="Group_26" transform="translate(-881 -511)">
+        <g id="add_circle_outline-24px" transform="translate(881 511)">
+            <path id="Path_370" d="M0 0h24v24H0z" class="cls-1"/>
+            <path id="Path_371" fill="#b1c0ce" d="M11.4 6.271H9.687v3.416H6.271V11.4h3.416v3.416H11.4V11.4h3.416V9.687H11.4zM10.541 2a8.541 8.541 0 1 0 8.541 8.541A8.544 8.544 0 0 0 10.541 2zm0 15.374a6.833 6.833 0 1 1 6.833-6.833 6.842 6.842 0 0 1-6.833 6.833z" transform="translate(1.459 1.459)"/>
+        </g>
+        <path id="Path_362" d="M0 0h24v24H0z" class="cls-1" transform="translate(881 511)"/>
+    </g>
+</svg>

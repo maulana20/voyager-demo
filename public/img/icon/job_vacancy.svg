@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:none}
+        </style>
+    </defs>
+    <g id="Group_8" transform="translate(82 -1518)">
+        <path id="Rectangle_560" d="M0 0H24V24H0z" class="cls-1" transform="translate(-82 1518)"/>
+        <g id="memory-24px" transform="translate(-82 1518)">
+            <g id="Group_4">
+                <path id="Rectangle_559" d="M0 0H24V24H0z" class="cls-1"/>
+            </g>
+            <g id="Group_7">
+                <g id="Group_6">
+                    <g id="Group_5">
+                        <path id="Path_359" fill="#fff" d="M14 9h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1zm-1 4h-2v-2h2zm8-3a1 1 0 0 0-1-1h-1V7a2.006 2.006 0 0 0-2-2h-2V4a1 1 0 0 0-1-1 1 1 0 0 0-1 1v1h-2V4a1 1 0 0 0-1-1 1 1 0 0 0-1 1v1H7a2.006 2.006 0 0 0-2 2v2H4a1 1 0 0 0-1 1 1 1 0 0 0 1 1h1v2H4a1 1 0 0 0-1 1 1 1 0 0 0 1 1h1v2a2.006 2.006 0 0 0 2 2h2v1a1 1 0 0 0 1 1 1 1 0 0 0 1-1v-1h2v1a1 1 0 0 0 1 1 1 1 0 0 0 1-1v-1h2a2.006 2.006 0 0 0 2-2v-2h1a1 1 0 0 0 1-1 1 1 0 0 0-1-1h-1v-2h1a1 1 0 0 0 1-1zm-4 7H7V7h10z"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

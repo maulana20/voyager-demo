@@ -1,0 +1,93 @@
+@media (min-width: 576px) {
+    .card-columns-2 {
+        -moz-column-count: 2 !important;
+        column-count: 2 !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .login-applicant-pages {
+        height: auto;
+
+        h4 {
+            margin: 3.5rem 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .medium-carousel {
+        .item {
+            margin: 0;
+            box-shadow: none;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .owl-nav button {
+            &.owl-next { right: -30px; }
+
+            &.owl-prev { left: -30px; }
+        }
+    }
+    .innovation {
+        .item {
+            .item-inside {
+                height: 480px;
+            }
+    
+            .item-image {
+                margin: -230px 0 0 0;
+            }
+        }
+    }
+    .navbar {
+        min-height: 0;
+    }
+    .box-head {
+        padding-top: 1.5rem !important;
+        img {
+            height: 205px;
+        }
+        .head-title {
+            font-size: 2.5rem !important;
+        }
+    }
+    .box-open-position {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .box-card-product {
+        margin-bottom: 2rem !important;
+    }
+    .box-card-product-dot {
+        background-image: none;
+    }
+    .navbar-collapse {
+        .nav-item {
+            padding: 0;
+            .btn.btn-white, p {
+                border: transparent;
+                padding: 0.375rem 0;
+            }
+        }
+    }
+    .dropdown-menu-account {
+        display: none;
+    }
+    .user-account {
+        display: block;
+    }
+}
+
+@media (max-width: 1024px) {
+    .innovation {
+        .item {
+            .item-inside {
+                height: 480px;
+            }
+    
+            .item-image {
+                margin: -135px 0 0 0;
+            }
+        }
+    }
+}

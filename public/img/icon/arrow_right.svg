@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="arrow_forward_ios-24px" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#c8d5fc}
+        </style>
+    </defs>
+    <g id="Group_4">
+        <path id="Path_2" fill="none" d="M0 0h24v24H0z"/>
+    </g>
+    <g id="Group_5" transform="translate(6.809 6.632)">
+        <path id="Path_3" d="M6.23 11.786l.95.95 5.368-5.368L7.18 2l-.95.95 4.418 4.418z" class="cls-2" transform="translate(-6.23 -2)"/>
+    </g>
+    <g id="Group_6" transform="translate(11.103 6.632)">
+        <path id="Path_3-2" d="M6.23 11.786l.95.95 5.368-5.368L7.18 2l-.95.95 4.418 4.418z" class="cls-2" transform="translate(-6.23 -2)"/>
+    </g>
+</svg>
